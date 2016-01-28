@@ -1,5 +1,7 @@
 <?php
 session_start();
+error_reporting(E_ALL & ~E_NOTICE);
+  include_once('connection.php');
 
 if (isset($_SESSION['id'])){
   $userId = $_SESSION['id'];
@@ -9,40 +11,48 @@ if (isset($_SESSION['id'])){
   die();
 }
 
+if (isset($_POST['carwash'])){
+  $currentTime = date('d-m-Y G:i:s');
+  echo $currentTime;
+}
+
+if (isset($_POST['carWash'])){
+   $currentTime = date('Y/m/d : H:i:s', time());
+   $SQL = "INSERT INTO carwash (dateTime, username) VALUES ('$currentTime', '$username')";
+   $result = mysqli_query($dbCon, $SQL);
+}
 
 ?>
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <link rel="stylesheet" type="text/css" href="StyleSheet.css"/>
-    <script type="text/javascript" src="Script.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    <script type="text/javascript" src="jquery-ui-1.11.3/jquery-ui.min.js"> </script>
-  <link rel="stylesheet" type="text/css" href= "jquery.alerts.css"/>
-    <script type="text/javascript" src="jquery.alerts.js"> </script>
-     <link rel="stylesheet" type="text/css" href="jquery-ui-1.11.3/jquery-ui.min.css"/>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head runat='server'>
+    <link rel='stylesheet' type='text/css' href='Stylesheet.css'/>
+    <script type='text/javascript' src='Script.js'></script>
+    <link rel='stylesheet' type='text/css' href='css/bootstrap.min.css'/>
     <title></title>
 </head>
 <body>
+<div id='container'>
 <h1> Welcome, <?php echo $username ?>. </h1>
-
-<form action="logout.php">
-  <input type="submit" value="Log out">
-</form>
-    <div id="main">
-      <div class="block">
-            <div class="centered">
-                <div><input type="button" class="button" value="Refuel" onclick="refuel()" /></div>
-                <div><input type="button" class="button" value="Carwash" onclick="carwash1()"/></div>
-                <div><input type="button" class="button" value="Oil check" onclick="oil_check()"/></div>
-                <div><input type="button" class="button" value="Tyres Check" onclick="tyres_check()"/></div>
-  </div>
-
+    <div id='main'>
+      <div class='block'>
+            <div class='centered'>
+            <?php echo
+              "<form method='POST' action=''>
+                <div><button type='submit' class='btn btn-default btn-block' onclick='refuel()' name='reFuel'> Refuel </button></div>
+                <div><button type='submit' class='btn btn-default btn-block' onclick='carwash()' name='carWash'> Carwash </button></div>
+                <div><button type='submit' class='btn btn-default btn-block' onclick='oil_check()' name='oilCheck'> Oil Check </button></div>
+                <div><button type='submit' class='btn btn-default btn-block' onclick='tyres_check()' name='tyresCheck'> Tyres Check </button></div>
+                <br>
+                </form>" ?>
+                <form action='logout.php'>
+                  <button type='submit' class='btn btn-default' id='logout'> Logout </button>
+                </form>
+            </div>
+      </div>
+    </div>
 </div>
-
-       </div>
-
 </body>
 </html>

@@ -3,37 +3,50 @@
   margin: 0;
   padding: 0;
 }
-body {
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
+body{
+  background-image: url('grey-textures-gradient.jpg');
+  background-repeat: no-repeat;
+  font-variant: small-caps;
+  font-size: 14px;
+}
+
+.main{
+  width: 100%;
+  height: 100%;
+}
 
 /* Can be any width and height */
 .block {
-  width:500px;
-  height:auto;
   text-align: center;
-  background:grey;
-  
+  background: gray;
 }
 
 /* The ghost, nudged to maintain perfect centering */
-.block:before {
-  content:'';
-  display: inline-block;
-  height: 100%;
-  vertical-align: middle;
-  margin-right: -0.25em; /* Adjusts for spacing */
-}
+
 
 /* The element to be centered, can be any width or height */
 .centered {
   display: inline-block;
   vertical-align: middle;
-  width: 300px;
+  width: 75%;
+  padding: 15px 0 ;
 }
 
-.button{
-    width:150px;
-    height:40px;
-    margin:5px;
+
+#container h1{
+  color: white;
+  text-align: center;
+
+}
+
+#logout{
+  display: inline-block;
+  vertical-align: middle;
 }

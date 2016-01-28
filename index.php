@@ -6,7 +6,7 @@ if (isset($_POST['submit'])){
 	$username = $_POST['username'];
 	$password = $_POST['password'];
 
-	$sql = "SELECT * FROM members WHERE username = '$username' AND password = '$password'";
+	$sql = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
 	$query = mysqli_query($dbCon, $sql);
 
 	if($query) {
