@@ -1,0 +1,39 @@
+
+*{
+  margin: 0;
+  padding: 0;
+}
+body {
+}
+
+
+/* Can be any width and height */
+.block {
+  width:500px;
+  height:auto;
+  text-align: center;
+  background:grey;
+  
+}
+
+/* The ghost, nudged to maintain perfect centering */
+.block:before {
+  content:'';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -0.25em; /* Adjusts for spacing */
+}
+
+/* The element to be centered, can be any width or height */
+.centered {
+  display: inline-block;
+  vertical-align: middle;
+  width: 300px;
+}
+
+.button{
+    width:150px;
+    height:40px;
+    margin:5px;
+}
