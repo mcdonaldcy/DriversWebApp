@@ -2,15 +2,15 @@
 <html>
 <head>
 	<title></title>
-    <script type='text/javascript' src='Script.js'></script>
+    <script type='text/javascript' src='js/script.js'></script>
     <link rel='stylesheet' type='text/css' href='css/bootstrap.min.css'/>
-    <link rel='stylesheet' type='text/css' href='styles2.css'/>
+    <link rel='stylesheet' type='text/css' href='css/styles2.css'/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 <h1> Welcome to McDrivers, please log in to continue. </h1>
 
 <form method="POST" action=".">
-<form>
   <div class="form-group">
     <label for="exampleInputEmail1">Username</label>
     <input type="text" name="username" class="form-control" id="exampleInputEmail1" placeholder="Username">
@@ -51,7 +51,6 @@ if (isset($_POST['submit'])){
 }
     ?>
   </div>
-</form>
 </form>
 <!--
 <div class="form-group">

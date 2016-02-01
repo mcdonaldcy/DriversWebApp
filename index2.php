@@ -35,13 +35,14 @@ if (isset($_POST['tyresCheck'])){
 
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head runat='server'>
-    <link rel='stylesheet' type='text/css' href='Stylesheet.css'/>
-    <script type='text/javascript' src='Script.js'></script>
+    <link rel='stylesheet' type='text/css' href='css/styles.css'/>
+    <script type='text/javascript' src='js/script.js'></script>
     <link rel='stylesheet' type='text/css' href='css/bootstrap.min.css'/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title></title>
 </head>
 <body>
@@ -89,5 +90,16 @@ if (isset($_POST['tyresCheck'])){
     </div>
  </div>
 </div>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("#sub1").click(function(e){
+        if(!confirm('Are you sure?')){
+            e.preventDefault();
+            return false;
+        }
+        return true;
+    });
+});
+</script>
 </body>
 </html>
