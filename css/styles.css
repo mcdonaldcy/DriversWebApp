@@ -10,7 +10,7 @@ html {
   box-sizing: inherit;
 }
 
-body{
+#body1{
   background-image: url('../imgs/grey-textures-gradient.jpg');
   background-repeat: no-repeat;
   font-variant: small-caps;
@@ -36,7 +36,7 @@ body{
   display: inline-block;
   vertical-align: middle;
   width: 75%;
-  padding: 15px 0 ;
+  padding: 15px 0px;
 }
 
 p{
@@ -54,3 +54,15 @@ p{
   display: inline-block;
   vertical-align: middle;
 }
+
+#h1log{
+  font-size: 20px;
+  text-align: center;
+}
+
+
+.form-group{
+  padding: 0 10px;
+}
+
+

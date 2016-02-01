@@ -45,7 +45,7 @@ if (isset($_POST['tyresCheck'])){
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title></title>
 </head>
-<body>
+<body id="body1">
 <div id='container'>
 <h1> Welcome, <?php echo $username?></h1>
     <div id='main'>
